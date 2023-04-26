@@ -62,6 +62,8 @@ def serve(sock: socket.socket) -> None:
             sock.sendto(
                 b"Invalid request, valid options are:\n" + bench_request_msg + b"\n"
             )
+            continue
+
         bench_result = run_bench().encode()
         sock.sendto(bench_result, addr)
         logger.info(f"Handled request from {addr} with response: {bench_result}")
