@@ -8,65 +8,49 @@ x-common-variables:
 
 services:
   bench-pickle:
-    image: serialization-benchmark-pickle
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "Pickle"
 
   bench-json:
-    image: serialization-benchmark-json
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "JSON"
 
   bench-xml:
-    image: serialization-benchmark-xml
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "XML"
 
   bench-yaml:
-    image: serialization-benchmark-yaml
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "YAML"
 
   bench-msgpack:
-    image: serialization-benchmark-msgpack
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "MessagePack"
 
   bench-avro:
-    image: serialization-benchmark-avro
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "Avro"
 
   bench-proto:
-    image: serialization-benchmark-proto
-    build:
-      dockerfile: bench/Dockerfile
+    image: raphel/serialization-benchmark:latest-bench
     environment:
       <<: *common-variables
       SER_FORMAT: "ProtoBuf"
 
   bench-proxy:
-    image: serialization-benchmark-proxy
-    build:
-      dockerfile: proxy/Dockerfile
+    image: raphel/serialization-benchmark:latest-proxy
     environment:
       <<: *common-variables
       PORT: 2000
