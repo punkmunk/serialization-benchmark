@@ -1,0 +1,40 @@
+{
+    "type": "record",
+    "name": "School",
+    "fields": [
+        {
+            "name": "groups",
+            "type": {
+                "type": "map",
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "record",
+                        "name": "Group1",
+                        "fields": [
+                            {
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "surname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gpa",
+                                "type": "double"
+                            },
+                            {
+                                "name": "grades",
+                                "type": {
+                                    "type": "map",
+                                    "values": "int"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

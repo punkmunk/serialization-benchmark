@@ -1,0 +1,30 @@
+{
+    "Pickle": {
+        "container": "bench-pickle",
+        "port": 2001
+    },
+    "JSON": {
+        "container": "bench-json",
+        "port": 2002
+    },
+    "XML": {
+        "container": "bench-xml",
+        "port": 2003
+    },
+    "YAML": {
+        "container": "bench-yaml",
+        "port": 2004
+    },
+    "MessagePack": {
+        "container": "bench-msgpack",
+        "port": 2005
+    },
+    "Avro": {
+        "container": "bench-avro",
+        "port": 2006
+    },
+    "ProtoBuf": {
+        "container": "bench-proto",
+        "port": 2007
+    }
+}

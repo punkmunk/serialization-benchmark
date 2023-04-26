@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Student {
+    string name = 1;
+    string surname = 2;
+    double gpa = 3;
+    map<string, int32> grades = 4;
+}
+
+message Students {
+    repeated Student students = 1;
+}
+
+message School {
+    map<string, Students> groups = 1;
+}

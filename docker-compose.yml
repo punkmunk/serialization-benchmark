@@ -1,0 +1,74 @@
+version: '3.4'
+
+x-common-variables:
+  &common-variables
+  MULTICAST_GROUP: 228.69.42.0
+  MULTICAST_PORT: 7777
+  BENCH_REQUEST_MSG: run_bench
+
+services:
+  bench-pickle:
+    image: serialization-benchmark-pickle
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "Pickle"
+
+  bench-json:
+    image: serialization-benchmark-json
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "JSON"
+
+  bench-xml:
+    image: serialization-benchmark-xml
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "XML"
+
+  bench-yaml:
+    image: serialization-benchmark-yaml
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "YAML"
+
+  bench-msgpack:
+    image: serialization-benchmark-msgpack
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "MessagePack"
+
+  bench-avro:
+    image: serialization-benchmark-avro
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "Avro"
+
+  bench-proto:
+    image: serialization-benchmark-proto
+    build:
+      dockerfile: bench/Dockerfile
+    environment:
+      <<: *common-variables
+      SER_FORMAT: "ProtoBuf"
+
+  bench-proxy:
+    image: serialization-benchmark-proxy
+    build:
+      dockerfile: proxy/Dockerfile
+    environment:
+      <<: *common-variables
+      PORT: 2000
+    ports:
+      - 2000:2000/udp

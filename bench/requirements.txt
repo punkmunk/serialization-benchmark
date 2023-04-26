@@ -1,0 +1,6 @@
+dicttoxml==1.7.16
+fastavro==1.7.3
+msgpack==1.0.5
+protobuf==4.21.9
+PyYAML==6.0
+xmltodict==0.13.0
